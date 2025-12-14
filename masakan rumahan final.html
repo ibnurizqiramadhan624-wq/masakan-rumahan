@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAI Home Foods - "Dapur Ibnu, Cita Rasa Adit, Inovasi Akmal"</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #7f8c8d;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .moto {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #e74c3c;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #e74c3c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Menu Section */
+        .menu {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .menu-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover .menu-image img {
+            transform: scale(1.05);
+        }
+
+        .menu-info {
+            padding: 15px;
+        }
+
+        .menu-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .menu-info p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .menu-details {
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            padding: 3px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        .detail-value {
+            color: #2c3e50;
+        }
+
+        .menu-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-weight: 700;
+            color: #e74c3c;
+            font-size: 1.1rem;
+        }
+
+        /* Variasi Tombol Order */
+        .btn-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .order-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .btn-primary {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-success {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-dark {
+            background: #34495e;
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(52, 73, 94, 0.3);
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #e74c3c;
+            border: 2px solid #e74c3c;
+        }
+
+        .btn-outline:hover {
+            background: #e74c3c;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            padding: 0;
+            font-size: 1.2rem;
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+
+        .btn-lg {
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        /* Image Sources Section */
+        .image-sources {
+            padding: 40px 0;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .sources-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sources-container h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .source-list {
+            list-style: none;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .source-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .source-list li:last-child {
+            border-bottom: none;
+        }
+
+        .source-icon {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .source-link {
+            color: #3498db;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .source-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 40px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .whatsapp-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: #e74c3c;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .modal h3 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .confirm-btn {
+            padding: 10px 20px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .cancel-btn {
+            padding: 10px 20px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Detail Modal Styles */
+        .detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .detail-modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .detail-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e74c3c;
+        }
+
+        .detail-modal-header h3 {
+            color: #e74c3c;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .close-detail-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: color 0.3s ease;
+        }
+
+        .close-detail-modal:hover {
+            color: #e74c3c;
+        }
+
+        .detail-modal-body {
+            margin-bottom: 20px;
+        }
+
+        .detail-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .detail-section {
+            margin-bottom: 20px;
+        }
+
+        .detail-section h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-section ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .detail-section li {
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .detail-section p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .nutrition-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nutrition-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .nutrition-value {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.1rem;
+        }
+
+        .nutrition-label {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        .detail-modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .detail-price {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .moto {
+                font-size: 1.1rem;
+            }
+            
+            .whatsapp-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .whatsapp-btn {
+                width: 200px;
+                justify-content: center;
+            }
+            
+            .menu-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .source-list {
+                padding: 15px;
+            }
+            
+            .source-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .modal-buttons {
+                flex-direction: column;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn-group .order-btn {
+                width: 100%;
+            }
+
+            .detail-modal-content {
+                padding: 20px;
+            }
+
+            .detail-modal-footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .detail-image {
+                height: 200px;
+            }
+
+            .nutrition-facts {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .moto {
+                font-size: 1rem;
+            }
+
+            .menu-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .btn-group {
+                width: 100%;
+            }
+
+            .detail-modal-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .detail-image {
+                height: 180px;
+            }
+
+            .nutrition-facts {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">AAI Home Foods</a>
+                <ul class="nav-links">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#sumber-gambar">Sumber Gambar</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <div class="container">
+            <h1>AAI Home Foods</h1>
+            <div class="moto">"Dapur Ibnu, Cita Rasa Adit, Inovasi Akmal"</div>
+            <p>Nikmati kehangatan masakan rumahan autentik yang langsung diantar ke depan pintu Anda. Dari dapur kami ke meja makan Anda.</p>
+            <a href="#menu" class="cta-button">Lihat Menu Lengkap</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Menu Lengkap Kami</h2>
+                <p>Berbagai pilihan hidangan lezat dengan cita rasa rumahan terbaik</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Menu 1: Salmon Wellington -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="c:\Users\ASUS\OneDrive\Pictures\komdat\gordon-ramsay-salmon-wellington-o.jpg" alt="Salmon Wellington">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Salmon Wellington</h3>
+                        <p>Salmon segar dibalut pastry renyah dengan isian jamur dan herba pilihan</p>
+                        <div class="menu-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tingkat Kesulitan:</span>
+                                <span class="detail-value">Tinggi</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Waktu Penyajian:</span>
+                                <span class="detail-value">25 menit</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kategori:</span>
+                                <span class="detail-value">Premium</span>
+                            </div>
+                        </div>
+                        <div class="menu-meta">
+                            <div class="price">Rp 75.000</div>
+                            <div class="btn-group">
+                                <button class="order-btn btn-primary" data-item="Salmon Wellington" data-price="75000">
+                                    <span>🛒</span> Pesan
+                                </button>
+                                <button class="order-btn btn-secondary btn-sm" onclick="showDetailModal('salmon-wellington')">
+                                    ℹ️ Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 2: Ayam Ulam Bali -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="c:\Users\ASUS\OneDrive\Pictures\komdat\ayam-sambal-bali-resipi-foto-utama.jpg" alt="Ayam Ulam Bali">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Ayam Ulam Bali</h3>
+                        <p>Ayam dengan bumbu Bali tradisional dan campuran ulam segar yang menggugah selera</p>
+                        <div class="menu-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tingkat Pedas:</span>
+                                <span class="detail-value">Sedang</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Waktu Penyajian:</span>
+                                <span class="detail-value">20 menit</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kategori:</span>
+                                <span class="detail-value">Tradisional</span>
+                            </div>
+                        </div>
+                        <div class="menu-meta">
+                            <div class="price">Rp 25.000</div>
+                            <div class="btn-group">
+                                <button class="order-btn btn-success" data-item="Ayam Ulam Bali" data-price="25000">
+                                    <span>🍗</span> Pesan
+                                </button>
+                                <button class="order-btn btn-outline btn-sm" onclick="showDetailModal('ayam-bali')">
+                                    ℹ️ Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 3: Salmon Mashed Potato -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="c:\Users\ASUS\OneDrive\Pictures\komdat\glazed-sesame-salmon-wasabi-mashed-potatoes.jpg" alt="Salmon Mashed Potato">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Salmon Mashed Potato</h3>
+                        <p>Fillet salmon panggang dengan mashed potato lembut dan saus spesial</p>
+                        <div class="menu-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tingkat Kesulitan:</span>
+                                <span class="detail-value">Sedang</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Waktu Penyajian:</span>
+                                <span class="detail-value">15 menit</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kategori:</span>
+                                <span class="detail-value">Western</span>
+                            </div>
+                        </div>
+                        <div class="menu-meta">
+                            <div class="price">Rp 75.000</div>
+                            <div class="btn-group">
+                                <button class="order-btn btn-warning" data-item="Salmon Mashed Potato" data-price="75000">
+                                    <span>🔥</span> Pesan Cepat
+                                </button>
+                                <button class="order-btn btn-dark btn-sm" onclick="showDetailModal('salmon-potato')">
+                                    ℹ️ Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 4: Zoopa Soup -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="c:\Users\ASUS\OneDrive\Pictures\komdat\zoopa soup.jpg" alt="Zoopa Soup">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Zoopa Soup</h3>
+                        <p>Sup segar dengan campuran sayuran dan rempah-rempah pilihan</p>
+                        <div class="menu-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Porsi:</span>
+                                <span class="detail-value">1 Orang</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Waktu Penyajian:</span>
+                                <span class="detail-value">10 menit</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kategori:</span>
+                                <span class="detail-value">Appetizer</span>
+                            </div>
+                        </div>
+                        <div class="menu-meta">
+                            <div class="price">Rp 18.000</div>
+                            <div class="btn-group">
+                                <button class="order-btn btn-dark" data-item="Zoopa Soup" data-price="18000">
+                                    <span>🥣</span> Pesan
+                                </button>
+                                <button class="order-btn btn-secondary btn-sm" onclick="showDetailModal('zoopa-soup')">
+                                    ℹ️ Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 5: Chicken Wonton -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="c:\Users\ASUS\OneDrive\Pictures\komdat\chiken wonton.jpg" alt="Chicken Wonton">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Chicken Wonton</h3>
+                        <p>Wonton isi ayam dengan kulit tipis dan kuah kaldu yang gurih</p>
+                        <div class="menu-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Jumlah:</span>
+                                <span class="detail-value">8 pcs</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Waktu Penyajian:</span>
+                                <span class="detail-value">12 menit</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kategori:</span>
+                                <span class="detail-value">Chinese</span>
+                            </div>
+                        </div>
+                        <div class="menu-meta">
+                            <div class="price">Rp 22.000</div>
+                            <div class="btn-group">
+                                <button class="order-btn btn-primary btn-lg" data-item="Chicken Wonton" data-price="22000">
+                                    <span>🥟</span> Pesan Sekarang
+                                </button>
+                                <button class="order-btn btn-outline btn-sm" onclick="showDetailModal('chicken-wonton')">
+                                    ℹ️ Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 6: Beef Teppanyaki -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="c:\Users\ASUS\OneDrive\Pictures\komdat\beef-teppanyaki.jpg" alt="Beef Teppanyaki">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Beef Teppanyaki</h3>
+                        <p>Daging sapi premium dengan saus teppanyaki spesial dan sayuran segar</p>
+                        <div class="menu-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tingkat Kematangan:</span>
+                                <span class="detail-value">Medium</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Waktu Penyajian:</span>
+                                <span class="detail-value">18 menit</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kategori:</span>
+                                <span class="detail-value">Japanese</span>
+                            </div>
+                        </div>
+                        <div class="menu-meta">
+                            <div class="price">Rp 65.000</div>
+                            <div class="btn-group">
+                                <button class="order-btn btn-success" data-item="Beef Teppanyaki" data-price="65000">
+                                    <span>🥩</span> Pesan
+                                </button>
+                                <button class="order-btn btn-outline btn-sm" onclick="showDetailModal('beef-teppanyaki')">
+                                    ℹ️ Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Baru 7: Chicken Katsu -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="c:\Users\ASUS\OneDrive\Pictures\komdat\chicken-katsu-foto-resep-utama.jpg" alt="Chicken Katsu">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Chicken Katsu</h3>
+                        <p>Ayam goreng tepung krispi ala Jepang dengan saus katsu spesial</p>
+                        <div class="menu-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tingkat Kerenyahan:</span>
+                                <span class="detail-value">Tinggi</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Waktu Penyajian:</span>
+                                <span class="detail-value">15 menit</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kategori:</span>
+                                <span class="detail-value">Japanese</span>
+                            </div>
+                        </div>
+                        <div class="menu-meta">
+                            <div class="price">Rp 28.000</div>
+                            <div class="btn-group">
+                                <button class="order-btn btn-warning" data-item="Chicken Katsu" data-price="28000">
+                                    <span>🍗</span> Pesan
+                                </button>
+                                <button class="order-btn btn-dark btn-sm" onclick="showDetailModal('chicken-katsu')">
+                                    ℹ️ Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Baru 8: Sushi Appetizer -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="c:\Users\ASUS\OneDrive\Pictures\komdat\sushi-appetizer-platter-1ozalv1s6v4jk78m.jpg" alt="Sushi Appetizer">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Sushi Appetizer Platter</h3>
+                        <p>Platter sushi segar dengan berbagai pilihan salmon, tuna, dan udang</p>
+                        <div class="menu-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Jenis Sushi:</span>
+                                <span class="detail-value">6 Variasi</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Waktu Penyajian:</span>
+                                <span class="detail-value">20 menit</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kategori:</span>
+                                <span class="detail-value">Japanese</span>
+                            </div>
+                        </div>
+                        <div class="menu-meta">
+                            <div class="price">Rp 85.000</div>
+                            <div class="btn-group">
+                                <button class="order-btn btn-primary" data-item="Sushi Appetizer Platter" data-price="85000">
+                                    <span>🍣</span> Pesan
+                                </button>
+                                <button class="order-btn btn-success btn-sm" onclick="showDetailModal('sushi-platter')">
+                                    ℹ️ Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Baru 9: Ayam Bakar Pedas Manis -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="c:\Users\ASUS\OneDrive\Pictures\komdat\Ayam_Bakar_Pedas_Manis.jpg" alt="Ayam Bakar Pedas Manis">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Ayam Bakar Pedas Manis</h3>
+                        <p>Ayam bakar bumbu spesial dengan paduan pedas dan manis yang pas</p>
+                        <div class="menu-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tingkat Pedas:</span>
+                                <span class="detail-value">Tinggi</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Waktu Penyajian:</span>
+                                <span class="detail-value">25 menit</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kategori:</span>
+                                <span class="detail-value">Tradisional</span>
+                            </div>
+                        </div>
+                        <div class="menu-meta">
+                            <div class="price">Rp 32.000</div>
+                            <div class="btn-group">
+                                <button class="order-btn btn-danger" data-item="Ayam Bakar Pedas Manis" data-price="32000">
+                                    <span>🔥</span> Pesan
+                                </button>
+                                <button class="order-btn btn-outline btn-sm" onclick="showDetailModal('ayam-bakar')">
+                                    ℹ️ Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Sources Section -->
+    <section class="image-sources" id="sumber-gambar">
+        <div class="container">
+            <div class="sources-container">
+                <h3>Sumber Gambar Menu</h3>
+                <ul class="source-list">
+                    <li>
+                        <span class="source-icon">📷</span>
+                        <span><strong>Salmon Wellington:</strong> </span>
+                        <a href="https://tastyfamouseats.com/wp-content/uploads/2025/04/gordon-ramsay-salmon-wellington-o.jpg" class="source-link" target="_blank">https://tastyfamouseats.com/wp-content/uploads/2025/04/gordon-ramsay-salmon-wellington-o.jpg</a>
+                    </li>
+                    <li>
+                        <span class="source-icon">📷</span>
+                        <span><strong>Ayam Ulam Bali:</strong> </span>
+                        <a href="https://img-global.cpcdn.com/recipes/aeb7d65a3accd162/751x532cq70/ayam-sambal-bali-resipi-foto-utama.jpg" class="source-link" target="_blank">https://img-global.cpcdn.com/recipes/aeb7d65a3accd162/751x532cq70/ayam-sambal-bali-resipi-foto-utama.jpg</a>
+                    </li>
+                    <li>
+                        <span class="source-icon">📷</span>
+                        <span><strong>Salmon Mashed Potato:</strong> </span>
+                        <a href="https://www.mygourmetconnection.com/wp-content/uploads/glazed-sesame-salmon-wasabi-mashed-potatoes.jpg" class="source-link" target="_blank">https://www.mygourmetconnection.com/wp-content/uploads/glazed-sesame-salmon-wasabi-mashed-potatoes.jpg</a>
+                    </li>
+                    <li>
+                        <span class="source-icon">📷</span>
+                        <span><strong>Zoopa Soup:</strong> </span>
+                        <a href="https://radarjabar.disway.id/upload/109bda502bed85cef703162042d6af57.jpg" class="source-link" target="_blank">https://radarjabar.disway.id/upload/109bda502bed85cef703162042d6af57.jpg</a>
+                    </li>
+                    <li>
+                        <span class="source-icon">📷</span>
+                        <span><strong>Chicken Wonton:</strong> </span>
+                        <a href="https://images.tokopedia.net/img/cache/500-square/product-1/2020/1/16/39863109/39863109_3b891a2a-c975-4c88-b1f5-0637d0718c0e_500_500?ect=4g" class="source-link" target="_blank">https://images.tokopedia.net/img/cache/500-square/product-1/2020/1/16/39863109/39863109_3b891a2a-c975-4c88-b1f5-0637d0718c0e_500_500?ect=4g</a>
+                    </li>
+                    <li>
+                        <span class="source-icon">📷</span>
+                        <span><strong>Beef Teppanyaki:</strong> </span>
+                        <a href="https://www.keyingredient.com/media/00/b9/561642aeb985c9cefab3dace710ae8514c5b.jpg/rh/beef-teppanyaki.jpg" class="source-link" target="_blank">https://www.keyingredient.com/media/00/b9/561642aeb985c9cefab3dace710ae8514c5b.jpg/rh/beef-teppanyaki.jpg</a>
+                    </li>
+                    <!-- Sumber gambar baru -->
+                    <li>
+                        <span class="source-icon">📷</span>
+                        <span><strong>Chicken Katsu:</strong> </span>
+                        <a href="https://unsplash.com/photos/sliced-meat-and-vegetable-dish-on-white-ceramic-plate-1610057099443" class="source-link" target="_blank">https://unsplash.com/photos/sliced-meat-and-vegetable-dish-on-white-ceramic-plate-1610057099443</a>
+                    </li>
+                    <li>
+                        <span class="source-icon">📷</span>
+                        <span><strong>Sushi Appetizer Platter:</strong> </span>
+                        <a href="https://unsplash.com/photos/salmon-sushi-on-brown-wooden-board-1579584425555" class="source-link" target="_blank">https://unsplash.com/photos/salmon-sushi-on-brown-wooden-board-1579584425555</a>
+                    </li>
+                    <li>
+                        <span class="source-icon">📷</span>
+                        <span><strong>Ayam Bakar Pedas Manis:</strong> </span>
+                        <a href="https://unsplash.com/photos/cooked-meat-on-white-ceramic-bowl-1626645738196" class="source-link" target="_blank">https://unsplash.com/photos/cooked-meat-on-white-ceramic-bowl-1626645738196</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontak">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <p>Pesan langsung via WhatsApp untuk pengalaman yang lebih personal</p>
+            <div class="whatsapp-buttons">
+                <a href="https://wa.me/6287886371713" class="whatsapp-btn">💬 Ibnu</a>
+                <a href="https://wa.me/6285884725952" class="whatsapp-btn">💬 Akmal</a>
+                <a href="https://wa.me/6282246241997" class="whatsapp-btn">💬 Adit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AAI Home Foods</h3>
+                    <p>Menghadirkan cita rasa masakan rumahan autentik langsung ke meja makan Anda.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Tautan Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#sumber-gambar">Sumber Gambar</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Layanan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#menu">Pemesanan</a></li>
+                        <li><a href="#kontak">Pengiriman</a></li>
+                        <li><a href="#kontak">Pembayaran</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li>Tangerang Selatan, Indonesia</li>
+                        <li>Email: AAIHomeFoods@example.com</li>
+                        <li>Jam Operasional: 09.00 - 21.00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 AAI Home Foods. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <h3>Konfirmasi Pesanan</h3>
+            <p id="modalMessage">Anda akan memesan:</p>
+            <div class="modal-buttons">
+                <button class="confirm-btn" id="confirmOrder">Pesan via WhatsApp</button>
+                <button class="cancel-btn" id="cancelOrder">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div class="detail-modal" id="detailModal">
+        <div class="detail-modal-content">
+            <div class="detail-modal-header">
+                <h3 id="detailTitle">Detail Menu</h3>
+                <button class="close-detail-modal" onclick="closeDetailModal()">&times;</button>
+            </div>
+            <div class="detail-modal-body">
+                <div class="detail-image">
+                    <img id="detailImage" src="" alt="Menu Image">
+                </div>
+                <div class="detail-section">
+                    <h4>Deskripsi</h4>
+                    <p id="detailDescription"></p>
+                </div>
+                <div class="detail-section">
+                    <h4>Bahan-bahan</h4>
+                    <ul id="detailIngredients"></ul>
+                </div>
+                <div class="detail-section">
+                    <h4>Cara Penyajian</h4>
+                    <p id="detailServing"></p>
+                </div>
+                <div class="detail-section">
+                    <h4>Informasi Gizi (per porsi)</h4>
+                    <div class="nutrition-facts" id="detailNutrition"></div>
+                </div>
+                <div class="detail-section">
+                    <h4>Catatan Khusus</h4>
+                    <p id="detailNotes"></p>
+                </div>
+            </div>
+            <div class="detail-modal-footer">
+                <div class="detail-price" id="detailPrice">Rp 0</div>
+                <div class="btn-group">
+                    <button class="order-btn btn-primary" id="detailOrderBtn">Pesan Sekarang</button>
+                    <button class="order-btn btn-outline" onclick="closeDetailModal()">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data detail untuk semua menu
+        const menuDetails = {
+            'salmon-wellington': {
+                title: 'Salmon Wellington',
+                image: 'c:\\Users\\ASUS\\OneDrive\\Pictures\\komdat\\gordon-ramsay-salmon-wellington-o.jpg',
+                description: 'Salmon premium segar dibalut dengan pastry renyah khas Prancis, diisi dengan duxelles jamur pilihan, bayam segar, dan herba aromatik. Dimasak dengan teknik pastry wrapping yang sempurna untuk menjaga kelembaban dan cita rasa salmon.',
+                ingredients: [
+                    '200g salmon fillet premium',
+                    '50g jamur kancing cincang',
+                    '30g bayam segar',
+                    '2 lembar puff pastry',
+                    '1 butir telur untuk olesan',
+                    'Bumbu: garam, lada, dill, lemon zest'
+                ],
+                serving: 'Disajikan hangat langsung dari oven dengan hiasan daun dill dan irisan lemon. Cocok dinikmati dengan white wine atau sparkling water.',
+                nutrition: [
+                    { label: 'Kalori', value: '420 kcal' },
+                    { label: 'Protein', value: '32g' },
+                    { label: 'Karbohidrat', value: '28g' },
+                    { label: 'Lemak', value: '22g' }
+                ],
+                notes: 'Dapat disesuaikan tingkat kematangan salmon sesuai permintaan. Untuk vegetarian, salmon dapat diganti dengan portobello mushroom.',
+                price: 'Rp 75.000'
+            },
+            'ayam-bali': {
+                title: 'Ayam Ulam Bali',
+                image: 'c:\\Users\\ASUS\\OneDrive\\Pictures\\komdat\\ayam-sambal-bali-resipi-foto-utama.jpg',
+                description: 'Ayam kampung pilihan dimasak dengan bumbu Bali autentik yang kaya rempah, disajikan dengan ulam segar dan sambal matah. Kombinasi sempurna antara pedas, asam, dan gurih.',
+                ingredients: [
+                    '500g ayam kampung',
+                    '10 cabai merah keriting',
+                    '5 cabai rawit merah',
+                    '5 siung bawang merah',
+                    '3 siung bawang putih',
+                    '2 cm kencur',
+                    '2 cm jahe',
+                    '1 sdt terasi bakar',
+                    'Ulam: kemangi, selada, timun, kol'
+                ],
+                serving: 'Disajikan dengan nasi putih hangat, ulam segar, dan sambal matah. Lengkapi dengan kerupuk untuk tekstur yang lebih beragam.',
+                nutrition: [
+                    { label: 'Kalori', value: '380 kcal' },
+                    { label: 'Protein', value: '35g' },
+                    { label: 'Karbohidrat', value: '15g' },
+                    { label: 'Lemak', value: '18g' }
+                ],
+                notes: 'Tingkat pedas dapat disesuaikan. Tersedia pilihan ayam tanpa tulang.',
+                price: 'Rp 25.000'
+            },
+            'salmon-potato': {
+                title: 'Salmon Mashed Potato',
+                image: 'c:\\Users\\ASUS\\OneDrive\\Pictures\\komdat\\glazed-sesame-salmon-wasabi-mashed-potatoes.jpg',
+                description: 'Fillet salmon Norwegia premium dipanggang dengan glace madu dan wijen, disajikan di atas mashed potato lembut dengan sentuhan wasabi. Paduan sempurna antara manis, gurih, dan pedas lembut.',
+                ingredients: [
+                    '180g salmon fillet',
+                    '300g kentang russet',
+                    '50ml susu full cream',
+                    '30g butter',
+                    '1 sdt wasabi paste',
+                    '2 sdm madu',
+                    '1 sdm wijen putih',
+                    'Bumbu: garam, lada, parsley'
+                ],
+                serving: 'Disajikan dengan sayuran tumis dan saus teriyaki di samping. Taburi dengan wijen sangrai dan daun parsley.',
+                nutrition: [
+                    { label: 'Kalori', value: '450 kcal' },
+                    { label: 'Protein', value: '30g' },
+                    { label: 'Karbohidrat', value: '35g' },
+                    { label: 'Lemak', value: '20g' }
+                ],
+                notes: 'Wasabi dapat dihilangkan untuk yang tidak menyukai pedas. Tersedia pilihan mashed potato biasa atau dengan wasabi.',
+                price: 'Rp 75.000'
+            },
+            'zoopa-soup': {
+                title: 'Zoopa Soup',
+                image: 'c:\\Users\\ASUS\\OneDrive\\Pictures\\komdat\\zoopa soup.jpg',
+                description: 'Sup krim kental dengan campuran sayuran musiman, daging ayam cincang, dan rempah-rempah Italia. Tekstur creamy yang kaya dengan aroma thyme dan rosemary.',
+                ingredients: [
+                    '100g daging ayam cincang',
+                    '50g wortel potong dadu',
+                    '50g jagung manis',
+                    '50g kacang polong',
+                    '30g bawang bombay',
+                    '500ml kaldu ayam',
+                    '100ml susu',
+                    '2 sdm tepung terigu',
+                    'Rempah: thyme, rosemary, daun seledri'
+                ],
+                serving: 'Disajikan panas dengan roti panggang atau crouton. Taburi dengan parsley cincang dan lada hitam.',
+                nutrition: [
+                    { label: 'Kalori', value: '280 kcal' },
+                    { label: 'Protein', value: '18g' },
+                    { label: 'Karbohidrat', value: '25g' },
+                    { label: 'Lemak', value: '12g' }
+                ],
+                notes: 'Tersedia pilihan vegetarian dengan mengganti kaldu ayam dengan kaldu sayur dan menghilangkan daging ayam.',
+                price: 'Rp 18.000'
+            },
+            'chicken-wonton': {
+                title: 'Chicken Wonton',
+                image: 'c:\\Users\\ASUS\\OneDrive\\Pictures\\komdat\\chiken wonton.jpg',
+                description: 'Wonton handmade dengan kulit tipis transparan, diisi dengan campuran daging ayam cincang, udang, dan sayuran. Disajikan dalam kuah kaldu ayam yang jernih dan gurih.',
+                ingredients: [
+                    '150g daging ayam cincang',
+                    '50g udang cincang',
+                    '30g daun bawang',
+                    '20g jamur shitake',
+                    '16 lembar kulit wonton',
+                    '1 liter kaldu ayam',
+                    'Bumbu: kecap asin, minyak wijen, jahe'
+                ],
+                serving: 'Disajikan panas dengan taburan daun bawang dan bawang goreng. Sajikan dengan kecap asin dan sambal sebagai pelengkap.',
+                nutrition: [
+                    { label: 'Kalori', value: '320 kcal' },
+                    { label: 'Protein', value: '25g' },
+                    { label: 'Karbohidrat', value: '30g' },
+                    { label: 'Lemak', value: '10g' }
+                ],
+                notes: 'Tersedia pilihan pedas dengan tambahan chili oil. Untuk vegetarian, isi dapat diganti dengan tahu dan jamur.',
+                price: 'Rp 22.000'
+            },
+            'beef-teppanyaki': {
+                title: 'Beef Teppanyaki',
+                image: 'c:\\Users\\ASUS\\OneDrive\\Pictures\\komdat\\beef-teppanyaki.jpg',
+                description: 'Daging sapi wagyu grade A dipotong dadu dan dimasak dengan teknik teppanyaki bersama sayuran segar. Saus spesial dengan campuran soy sauce, mirin, dan sake.',
+                ingredients: [
+                    '250g daging sapi wagyu',
+                    '100g paprika merah dan hijau',
+                    '100g bawang bombay',
+                    '50g jamur kancing',
+                    'Saus: soy sauce, mirin, sake, gula',
+                    'Pelengkap: nasi putih, acar jahe'
+                ],
+                serving: 'Disajikan di atas hot plate dengan nasi putih. Lengkapi dengan acar jahe dan wasabi.',
+                nutrition: [
+                    { label: 'Kalori', value: '520 kcal' },
+                    { label: 'Protein', value: '40g' },
+                    { label: 'Karbohidrat', value: '45g' },
+                    { label: 'Lemak', value: '25g' }
+                ],
+                notes: 'Tingkat kematangan daging dapat disesuaikan (rare, medium, well done). Tersedia pilihan daging sapi lokal dengan harga lebih ekonomis.',
+                price: 'Rp 65.000'
+            },
+            'chicken-katsu': {
+                title: 'Chicken Katsu',
+                image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50c91?w=400&h=200&fit=crop',
+                description: 'Dada ayam fillet premium dilapisi tepung panko dan digoreng hingga golden brown. Disajikan dengan saus katsu spesial, shredded cabbage, dan nasi Jepang.',
+                ingredients: [
+                    '200g dada ayam fillet',
+                    '100g tepung panko',
+                    '2 butir telur',
+                    '50g tepung terigu',
+                    'Saus katsu: tomat, apple, worcestershire',
+                    'Pelengkap: shredded cabbage, nasi, lemon'
+                ],
+                serving: 'Disajikan dengan nasi Jepang, shredded cabbage, dan lemon wedge. Tuang saus katsu di atas chicken katsu.',
+                nutrition: [
+                    { label: 'Kalori', value: '480 kcal' },
+                    { label: 'Protein', value: '35g' },
+                    { label: 'Karbohidrat', value: '40g' },
+                    { label: 'Lemak', value: '18g' }
+                ],
+                notes: 'Tersedia pilihan chicken katsu curry dengan tambahan saus kari Jepang. Untuk yang tidak suka ayam, tersedia pilihan pork katsu.',
+                price: 'Rp 28.000'
+            },
+            'sushi-platter': {
+                title: 'Sushi Appetizer Platter',
+                image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=200&fit=crop',
+                description: 'Platter sushi segar dengan 6 variasi berbeda: salmon nigiri, tuna nigiri, ebi nigiri, California roll, salmon roll, dan tamago. Semua dibuat dengan bahan premium dan nasi sushi berkualitas.',
+                ingredients: [
+                    'Nasi sushi Jepang premium',
+                    '100g salmon sashimi grade',
+                    '100g tuna sashimi grade',
+                    '6 ekor udang ebi',
+                    'Alpukat, mentimun, crab stick',
+                    'Rumput laut nori',
+                    'Kecap asin, wasabi, acar jahe'
+                ],
+                serving: 'Disajikan dalam platter kayu dengan hiasan daun shiso. Lengkapi dengan kecap asin, wasabi, dan acar jahe.',
+                nutrition: [
+                    { label: 'Kalori', value: '380 kcal' },
+                    { label: 'Protein', value: '28g' },
+                    { label: 'Karbohidrat', value: '50g' },
+                    { label: 'Lemak', value: '12g' }
+                ],
+                notes: 'Tersedia pilihan vegetarian dengan mengganti ikan dengan sayuran seperti avocado roll dan cucumber roll. Untuk takeaway, sushi dikemas dalam box khusus dengan ice pack.',
+                price: 'Rp 85.000'
+            },
+            'ayam-bakar': {
+                title: 'Ayam Bakar Pedas Manis',
+                image: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&h=200&fit=crop',
+                description: 'Ayam kampung utuh dibumbui dengan racikan rempah tradisional dan dibakar dengan arang hingga kecoklatan. Bumbu pedas manis yang meresap hingga ke dalam daging.',
+                ingredients: [
+                    '1 ekor ayam kampung (800g)',
+                    '10 cabai merah besar',
+                    '5 cabai rawit',
+                    '5 siung bawang putih',
+                    '3 butir kemiri',
+                    '2 sdm kecap manis',
+                    '1 sdm gula merah',
+                    '1 sdt asam jawa',
+                    'Bumbu olesan: madu, margarin'
+                ],
+                serving: 'Disajikan dengan lalapan segar (timun, selada, kemangi), sambal terasi, dan nasi putih hangat. Lengkapi dengan tempe/tahu goreng.',
+                nutrition: [
+                    { label: 'Kalori', value: '420 kcal' },
+                    { label: 'Protein', value: '38g' },
+                    { label: 'Karbohidrat', value: '20g' },
+                    { label: 'Lemak', value: '22g' }
+                ],
+                notes: 'Tingkat pedas dapat disesuaikan. Tersedia pilihan ayam potong atau ayam utuh. Untuk pesanan besar, tersedia paket dengan lauk tambahan.',
+                price: 'Rp 32.000'
+            }
+        };
+
+        // Smooth scroll untuk navigasi
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animasi hover pada menu items
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Order functionality untuk semua tombol dengan atribut data-item
+            const orderButtons = document.querySelectorAll('.order-btn[data-item]');
+            const modal = document.getElementById('orderModal');
+            const modalMessage = document.getElementById('modalMessage');
+            const confirmOrder = document.getElementById('confirmOrder');
+            const cancelOrder = document.getElementById('cancelOrder');
+            const detailOrderBtn = document.getElementById('detailOrderBtn');
+
+            let currentOrder = null;
+
+            // Fungsi untuk order dari tombol biasa
+            orderButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemName = this.getAttribute('data-item');
+                    const itemPrice = this.getAttribute('data-price');
+                    
+                    currentOrder = {
+                        name: itemName,
+                        price: itemPrice
+                    };
+
+                    modalMessage.textContent = `Anda akan memesan: ${itemName} - Rp ${parseInt(itemPrice).toLocaleString('id-ID')}`;
+                    modal.style.display = 'flex';
+                });
+            });
+
+            // Fungsi untuk order dari detail modal
+            detailOrderBtn.addEventListener('click', function() {
+                const detailTitle = document.getElementById('detailTitle').textContent;
+                const detailPrice = document.getElementById('detailPrice').textContent;
+                
+                // Extract price from string
+                const price = detailPrice.replace('Rp ', '').replace(/\./g, '');
+                
+                currentOrder = {
+                    name: detailTitle,
+                    price: price
+                };
+
+                modalMessage.textContent = `Anda akan memesan: ${detailTitle} - ${detailPrice}`;
+                modal.style.display = 'flex';
+                closeDetailModal();
+            });
+
+            // Confirm order
+            confirmOrder.addEventListener('click', function() {
+                if (currentOrder) {
+                    const message = `Halo AAI Home Foods! Saya ingin memesan:\n\n🍽️ *${currentOrder.name}*\n💵 Rp ${parseInt(currentOrder.price).toLocaleString('id-ID')}\n\nApakah masih tersedia?`;
+                    const encodedMessage = encodeURIComponent(message);
+                    
+                    // Buka WhatsApp dengan pesan yang sudah disiapkan
+                    window.open(`https://wa.me/6287886371713?text=${encodedMessage}`, '_blank');
+                }
+                modal.style.display = 'none';
+            });
+
+            // Cancel order
+            cancelOrder.addEventListener('click', function() {
+                modal.style.display = 'none';
+                currentOrder = null;
+            });
+
+            // Close modal ketika klik di luar
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    currentOrder = null;
+                }
+            });
+
+            // Footer links functionality
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            footerLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Fungsi untuk menampilkan detail modal
+        function showDetailModal(menuId) {
+            const detail = menuDetails[menuId];
+            if (!detail) return;
+
+            // Set content
+            document.getElementById('detailTitle').textContent = detail.title;
+            document.getElementById('detailImage').src = detail.image;
+            document.getElementById('detailImage').alt = detail.title;
+            document.getElementById('detailDescription').textContent = detail.description;
+            document.getElementById('detailPrice').textContent = detail.price;
+
+            // Set ingredients
+            const ingredientsList = document.getElementById('detailIngredients');
+            ingredientsList.innerHTML = '';
+            detail.ingredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.textContent = ingredient;
+                ingredientsList.appendChild(li);
+            });
+
+            // Set serving
+            document.getElementById('detailServing').textContent = detail.serving;
+
+            // Set nutrition
+            const nutritionContainer = document.getElementById('detailNutrition');
+            nutritionContainer.innerHTML = '';
+            detail.nutrition.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'nutrition-item';
+                div.innerHTML = `
+                    <div class="nutrition-value">${item.value}</div>
+                    <div class="nutrition-label">${item.label}</div>
+                `;
+                nutritionContainer.appendChild(div);
+            });
+
+            // Set notes
+            document.getElementById('detailNotes').textContent = detail.notes;
+
+            // Show modal
+            document.getElementById('detailModal').style.display = 'flex';
+        }
+
+        // Fungsi untuk menutup detail modal
+        function closeDetailModal() {
+            document.getElementById('detailModal').style.display = 'none';
+        }
+
+        // Close detail modal when clicking outside
+        document.getElementById('detailModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDetailModal();
+            }
+        });
+
+        // Fungsi tambahan untuk fitur tombol
+        function addToCart(itemName, price) {
+            alert(`✓ ${itemName} telah ditambahkan ke keranjang!\n\nTotal: Rp ${parseInt(price).toLocaleString('id-ID')}`);
+        }
+
+        function addToFavorites(itemName) {
+            alert(`❤️ ${itemName} telah ditambahkan ke favorit!`);
+        }
+    </script>
+</body>
+</html>
